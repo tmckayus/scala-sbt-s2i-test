@@ -1,0 +1,1 @@
+# scala-sbt-s2i-test
