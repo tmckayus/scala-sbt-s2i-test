@@ -22,21 +22,14 @@ import scala.math.random
 
 import org.apache.spark.sql.SparkSession
 
-/** Computes an approximation to pi */
+/** Sleeps for the purpose of external baseline resource consumption measurements */
 object SparkPi {
   def main(args: Array[String]) {
     val spark = SparkSession
       .builder
-      .appName("Spark Pi")
+      .appName("No-op Driver")
       .getOrCreate()
-    val slices = if (args.length > 0) args(0).toInt else 2
-    val n = math.min(100000L * slices, Int.MaxValue).toInt // avoid overflow
-    val count = spark.sparkContext.parallelize(1 until n, slices).map { i =>
-      val x = random * 2 - 1
-      val y = random * 2 - 1
-      if (x*x + y*y < 1) 1 else 0
-    }.reduce(_ + _)
-    println("Pi is roughly " + 4.0 * count / (n - 1))
+    spark.parallelize(1 to 10).map(_ => Thread sleep 1000000).collect()
     spark.stop()
   }
 }
