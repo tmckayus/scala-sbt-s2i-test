@@ -1,7 +1,7 @@
 scalaHome := Some(file("/opt/scala"))
 scalaVersion := "2.11.8"
 
-name := "SparkPi"
+name := "SparkSleep"
 
 version := "0.1"
 

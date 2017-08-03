@@ -18,18 +18,22 @@
 // scalastyle:off println
 package org.apache.spark.examples
 
-import scala.math.random
+import java.time.Duration;
 
 import org.apache.spark.sql.SparkSession
 
-/** Sleeps for the purpose of external baseline resource consumption measurements */
-object SparkPi {
+/** Sleeps for the purpose of external 
+    baseline resource consumption measurements */
+object SparkSleep {
   def main(args: Array[String]) {
     val spark = SparkSession
       .builder
       .appName("No-op Driver")
       .getOrCreate()
-    spark.parallelize(1 to 10).map(_ => Thread sleep 1000000).collect()
+    spark.sparkContext
+         .parallelize(1 to 10)
+         .map(_ => Thread sleep Duration.ofHours(1).getSeconds())
+         .collect()
     spark.stop()
   }
 }
