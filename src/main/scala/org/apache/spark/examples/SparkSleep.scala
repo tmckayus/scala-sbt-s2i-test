@@ -32,7 +32,7 @@ object SparkSleep {
       .getOrCreate()
     spark.sparkContext
          .parallelize(1 to 10)
-         .map(_ => Thread sleep Duration.ofHours(1).getSeconds())
+         .map(_ => Thread sleep Duration.ofHours(24).getSeconds())
          .collect()
     spark.stop()
   }
