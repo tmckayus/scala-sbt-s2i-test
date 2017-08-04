@@ -1,6 +1,6 @@
 # scala-sbt-s2i-test
 
-This application is a baseline measure of SPark overhead within a driver pod, 
+This application is a baseline measure of Spark overhead within a driver pod, 
 it is designed for use with a source-to-image workflow using 
 [OpenShift](https://www.openshift.org) and the
 [radanalytics project](https://radanalytics.io) tooling.
