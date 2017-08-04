@@ -16,7 +16,4 @@ it is designed for use with a source-to-image workflow using
        -p GIT_REF=sleeper
        -p APP_MAIN_CLASS=org.apache.spark.examples.SparkSleep
    ```
-1. Follow the logs of your application and look for the Pi results:
-   ```bash
-   oc logs -f dc/scala-sparksleep
-   ```
+1. Use `docker stats` to observe container CPU and memory resources consumed by the driver.
