@@ -1,9 +1,9 @@
 # scala-sbt-s2i-test
 
 This application is an implementation of the SparkPi example based on the
-upstream Apache Spark project, it is designed for use with a source-to-image
-workflow using [OpenShift](https://www.openshift.org) and the
-[radanalytics project](https://radanalytics.io) tooling.
+upstream [Apache Spark](http://spark.apache.org) project, it is designed for 
+use with a source-to-image workflow using [OpenShift](https://www.openshift.org) 
+and the [radanalytics project](https://radanalytics.io) tooling.
 
 ## quick start
 
